@@ -18,6 +18,8 @@ class TrackMFCCExtractor:
         self.melbands_log = None
         self.file_name = file_name
 
+        print(self.path)
+
     def run(self):
         # we start by instantiating the audio loader:
         loader = essentia.standard.EasyLoader(filename=str(self.path), startTime=self.start_time,
@@ -77,5 +79,27 @@ class TrackMFCCExtractor:
 #####################################################
 ####################### TEST ########################
 #####################################################
-tfe = TrackMFCCExtractor('Martin Garrix, Bonn - High On Life (Original Mix) [SWM].mp3', '0', 45, 15,'2')
+
+tfe = TrackMFCCExtractor('files/Martin Garrix & Julian Jordan - Glitch (Extended Mix).mp3', '0', 40, 5,
+                         'dataset/0_Glitch')
 tfe.run()
+
+# tfe = TrackMFCCExtractor('files/Dj Drew - Massive (Original Mix) [SWM].mp3', '0', 110, 5,
+#                          'dataset/0_Massive')
+# tfe.run()
+#
+# tfe = TrackMFCCExtractor('files/DJ Snake - Magenta Riddim (Original Mix) .mp3', '0', 23, 5,
+#                          'dataset/0_MagentaRiddim')
+# tfe.run()
+#
+# tfe = TrackMFCCExtractor('files/Don Diablo - Anthem (We Love House Music) (Extended Mix) [SWM].mp3', '0', 85, 5,
+#                          'dataset/0_Anthem')
+# tfe.run()
+#
+# tfe = TrackMFCCExtractor('files/Rise (Extended Mix) - Laidback Luke & Mark Villa.mp3', '0', 46, 5,
+#                          'dataset/0_Rise')
+# tfe.run()
+#
+# tfe = TrackMFCCExtractor('files/Steff Da Campo x Dave Crusher - September.mp3', '1', 25, 5,
+#                          'dataset/1_September')
+# tfe.run()
